@@ -1,0 +1,93 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Dingo",
+		"_postman_id": "41d797d1-ee50-a49f-e3d8-521e427e8ca1",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "data/platiums",
+			"request": {
+				"url": "http://localhost:8001/data/platiums",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "repo-/customers/1",
+			"request": {
+				"url": "http://localhost:8001/customers/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "      {\n        \"name\": \"employee2\",\n        \"email\": \"employee2@foxtel.com.au\",\n        \"phone\": \"0000111111\",\n        \"address\": {\n          \"line1\": \"Foxtel\",\n          \"line2\": \"Macquarie Park\",\n          \"city\": \"Sydney\",\n          \"state\": \"New South Wales\",\n          \"country\": \"Australia\",\n          \"zip\": \"2000\"\n        }\n      }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "data - post - customers",
+			"request": {
+				"url": "http://localhost:8001/customers",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "      { \"name\": \"employee1\",\n        \"email\": \"employee1@foxtel.com.au\",\n        \"rating\": \"PLATINUM\",\n        \"phone\": \"000000000\",\n        \"address\": {\n          \"line1\": \"Foxtel\",\n          \"line2\": \"Macquarie Park\",\n          \"city\": \"Sydney\",\n          \"state\": \"New South Wales\",\n          \"country\": \"Australia\",\n          \"zip\": \"2000\"\n        }\n      }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get customers",
+			"request": {
+				"url": "http://localhost:8001/customers",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 123,\n\t\"name\": \"arnotts creamy chocolate\",\n\t\"email\":\"hi@ii.com\",\n\t\"phone\":\"030234234324\",\n\t\"address\": [{\"line1\":\"hi there\t\"}]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/service/platiums",
+			"request": {
+				"url": "http://localhost:8002/service/platiums",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

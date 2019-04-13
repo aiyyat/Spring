@@ -1,0 +1,9 @@
+---
+applications:
+- name: entry
+  memory: 512M
+  host: entry
+  domain: cfapps.io
+  buildpack: java_buildpack
+  services:
+  - expdb

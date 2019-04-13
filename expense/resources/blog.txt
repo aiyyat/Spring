@@ -1,0 +1,30 @@
+Spring Boot + Spring MVC + JPA + ClearDB On Cloud Foundry
+
+Entry management application is a simple demo application developed using Spring Boot intended to be deployed onto Cloud Foundry. For unit test it is makes use of HSQL db while in integration mode relies on a local MySql datasource while in the Cloud it connects to ClearDB MySql DataSource service.
+1) Begin by registering on https://run.pivotal.io/
+2) After creating a domain of your own, choose a ClearDb service of your own. The Limited use plan is all free!
+3) Quick Overview: In the demo application rides on top of Spring Application Context as its container. Spring boot makes all the configuration and wiring look seamless and intuitive, demanding almost no XML configuration. It uses the Spring MVC Framework with Tiles View Resolver. Spring Services serve in the Model Layer and JPARepository bridges the DB in the persistence tier.
+Getting started with Spring Boot application is quite simple use your STS IDE or rely on http://start.spring.io/ to create your Spring boot application with the Dependencies of choice. Once application is written I choose to build a war out of it and it can be uploaded into cloud foundry.
+4) For this first download your copy of the cf executable
+curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github" | tar -zx
+5) Next push your application into the cloud environment with the command
+./cf push entry -p /home/achuth/git/source/Spring/entry/target/entry.war
+6) The following commands give an overview of the available services on the cloud environment and to check those services that have been bound against your application.  
+./cf marketplace
+./cf services
+ 7) Create a ClearDb (or the database of your choice) service in your cloud foundry account and take a note of the credentials from inside development page.
+ 8) Alternately you can choose to use register a service key to see the connection parameters.
+ ./cf create-service-key expdb EXTENAL-ACCESS-KEY
+./cf service-key expdb EXTENAL-ACCESS-KEY
+ 9) Once through the step 8 use the command 
+ ./cf ssh -N -L <localport>:<url>:<cloudport> <application-name>
+ to tunnel into your ClearDb instance. Remember to bind your service to your application for this to work, though.
+ 10) Almost there, you can use 
+ mysql -u <user_name> -h 0 -p -D <name> -P <localport> 
+ to access the mysql shell. Run your commands there. Restart your domain and there you are.
+ Source code can be accessed from
+ 
+ source code: https://github.com/technicalyorker/source/tree/master/Spring/entry 
+ appln url: http://entry.cfapps.io/login
+ 
+ This application was an experiment for me. I wanted to understand the difficulties of totally choosing avoiding any Business Objects or Data Transfer Objects (the Anti Pattern), made obsolete by the Domain Driven Design of programming (Rich Model as against Anemic Model of Domain Objects). I wanted to know the practical difficulties of using the Domain Objects to do the job of Value objects giving it. Though I was able to achieve the functionalities of this basic application, do make use  business objects for any practical medium to large sized applications.    

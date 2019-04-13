@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE tiles-definitions PUBLIC  
+      "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+      "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<!-- Base Define -->
+	<definition name="base.definition" template="/WEB-INF/views/layouts/classic.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/basefragments/header.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/basefragments/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/basefragments/footer.jsp" />
+	</definition>
+	<definition name="home_page" extends="base.definition">
+		<put-attribute name="title" value="Home Page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/bodyfragments/home.jsp" />
+	</definition>
+	<definition name="welcome" extends="base.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/bodyfragments/welcome.jsp" />
+	</definition>
+	<definition name="add_user" extends="base.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/bodyfragments/add_user.jsp" />
+	</definition>
+	<definition name="add_expense" extends="base.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/bodyfragments/add_expense.jsp" />
+	</definition>
+	<definition name="add_category" extends="base.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/bodyfragments/add_category.jsp" />
+	</definition>
+	<definition name="add_currency" extends="base.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/bodyfragments/add_currency.jsp" />
+	</definition>
+	<definition name="all_expenses" extends="base.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/bodyfragments/all_expenses.jsp" />
+	</definition>
+	<definition name="all_categories" extends="base.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/bodyfragments/all_categories.jsp" />
+	</definition>
+	<definition name="add_expense_type" extends="base.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/bodyfragments/add_expense_type.jsp" />
+	</definition>
+	<definition name="all_expense_types" extends="base.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/bodyfragments/all_expense_types.jsp" />
+	</definition>
+	<definition name="all_currencies" extends="base.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/bodyfragments/all_currencies.jsp" />
+	</definition>
+	<definition name="save_expense" extends="base.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/bodyfragments/save_expense.jsp" />
+	</definition>
+	<definition name="all_users" extends="base.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/bodyfragments/all_users.jsp" />
+	</definition>
+	<definition name="success" extends="base.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/bodyfragments/success.jsp" />
+	</definition>
+	<definition name="failure" extends="base.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/bodyfragments/failure.jsp" />
+	</definition>
+	<definition name="aboutus" extends="base.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/bodyfragments/aboutus.jsp" />
+	</definition>
+	<definition name="logout" extends="base.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/bodyfragments/logout.jsp" />
+	</definition>
+</tiles-definitions>
